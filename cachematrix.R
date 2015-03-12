@@ -56,8 +56,9 @@ makeCacheMatrix <- function(x = matrix()) {
 ## E.g. cacheSolve(cMat) where cMat is as indicated within the example for
 ## makeCacheMatrix
 cacheSolve <- function(x, ...) {
-        # Check if input x is a cache matrix object, return NULL and message if
-        # not:
+        # Check if input x is a cache matrix object, return NULL and message if 
+        # not, big assumption here that the existence of 'getInv' indicates that
+        # the input is a cached matrix object as created in 'makeCacheMatrix'
         if (!exists('getInv', envir = x)) {
                 message('Invalid input.')
                 return(NULL)
