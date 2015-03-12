@@ -87,18 +87,18 @@ cacheSolve <- function(x, ...) {
         # Determine if matrix is square by looking at its dimensions:
         matSize <- dim(matrix)
         if (length(matSize) != 2 || matSize[1] != matSize[2]) {
-                invMsg <- 'Non-square matrix.'
-                message(invMsg)
-                x$setMsg(invMsg)
+                invMsg <- 'Non-square matrix.' # Message to be displayed
+                message(invMsg)                # Display message
+                x$setMsg(invMsg)               # Save message in cache
                 invx <- NaN
         }
         else {  
                 # Square matrix invertible iff determinant of the matrix is
                 # non-zero:
                 if (det(matrix) == 0) {
-                        invMsg <- 'Non-singular matrix.'
-                        message(invMsg)
-                        x$setMsg(invMsg)
+                        invMsg <- 'Non-singular matrix.' # Message to be displayed
+                        message(invMsg)                  # Display message
+                        x$setMsg(invMsg)                 # Save message in cache
                         invx <- NaN
                 }
                 else {
